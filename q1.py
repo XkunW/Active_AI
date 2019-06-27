@@ -39,7 +39,7 @@ num_map = {
     "thousand": 1000
 }
 
-date_map = {
+day_map = {
     "first": 1,
     "second": 2,
     "third": 3,
@@ -98,15 +98,15 @@ def jj_processor(date):
     }
     year_composition = []
     for d in date:
-        if d in date_map:
-            bday["day"] = date_map[d]
+        if d in day_map:
+            bday["day"] = day_map[d]
             continue
         elif d in month_map:
             bday["month"] = month_map[d]
         elif "-" in d:
             if d[-2:] == "th":
                 ten, one = d.split("-")
-                bday["day"] = num_map[ten] + date_map[one]
+                bday["day"] = num_map[ten] + day_map[one]
                 continue
             else:
                 data = d.split("-")
@@ -205,8 +205,29 @@ def nn_processor(word):
     elif "-" in word:
         print("Day: {}".format(word))
         ten, one = word.split("-")
-        bday["day"] = num_map[ten] + date_map[one]
+        bday["day"] = num_map[ten] + day_map[one]
     return bday
+
+
+def word_checker(word):
+    if "-" in word:
+        component = word.split("-")
+        if len(component) == 2:
+            if component[1] in day_map:
+                return "day"
+            elif component[0] in num_map and component[1] in num_map:
+                return "year component"
+    for c in word:
+        if c.isdigit():
+            return "number"
+    if word in num_map:
+        return "year component"
+    elif word in month_map:
+        return "month"
+    elif word in day_map:
+        return "day"
+    else:
+        return "word"
 
 
 def record_data(bday):
@@ -225,6 +246,7 @@ if __name__ == "__main__":
     index = np.random.randint(0, len(question_list))
     answer = input(question_list[index]).lower()
     answer = nltk.word_tokenize(answer)
+    # print(answer)
     tagged = nltk.pos_tag(answer)
     print(tagged)
     date = []
