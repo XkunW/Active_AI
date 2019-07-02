@@ -311,16 +311,21 @@ def year_processor(year):
         return
     # Year is expressed in word form
     num = []
-    thousand = False
+    special_year = False
     for n in year:
         if n.isdigit():
             num.append(int(n))
         else:
-            num.append(num_map[n])
-        if n == "thousand":
-            thousand = True
-    # "thousand" is present in the user's answer ==> n * 1000 + 10s + 1s
-    if thousand:
+            if "-" in n:
+                ten, one = n.split("-")
+                num.append(num_map[ten])
+                num.append(num_map[one])
+            else:
+                num.append(num_map[n])
+        if n == "thousand" or n == "hundred":
+            special_year = True
+    # "thousand" or "hundred" is present in the user's answer ==> n * 1000 or 100 + 10s + 1s
+    if special_year:
         temp_year = num[0] * num[1]
         for i in range(2, len(num)):
             temp_year += num[i]
