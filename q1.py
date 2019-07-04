@@ -8,6 +8,13 @@ birthday = {
     "year": 0
 }
 
+ambiguity = {
+    "day": [],
+    "month": [],
+    "year": []
+}
+
+
 num_map = {
     "one": 1,
     "two": 2,
@@ -156,8 +163,15 @@ def number_processor(number):
     """
     # If this is a day, return
     if number[-2:] in suffix_map.values():
-        birthday["day"] = int(number[:-2])
-        return
+        birthday["day"] = int(number)
+
+    if number in num_map:
+        number = num_map[number]
+    # User spelled date as a number in word form, reformat to digit form
+    if "-" in number:
+        num_list = number.split("-")
+        if len(num_list) == 2 and num_list[0] in num_map and num_list[1] in num_map:
+            number = str(num_map[num_list[0]] + num_map[num_list[1]])
     # Check for delimiters and separates the numbers in a list
     data = []
     temp = ""
@@ -185,15 +199,30 @@ def number_categorize(number):
     :param number: Number to be examined
     :return: Updates birthday accordingly
     """
-    if number > 31 and not in_range("year"):
-        birthday["year"] = number
-    elif number in range(13, 32) and not in_range("day"):
-        birthday["day"] = number
-    else:  # When the number is less than 12, it can be either a month or a day
+    if number > 31:
+        if not in_range("year"):
+            birthday["year"] = number
+        else:
+            if number != birthday["year"]:
+                ambiguity["year"].append(number)
+    elif number in range(13, 32):
+        if not in_range("day"):
+            birthday["day"] = number
+        else:
+            if number != birthday["day"]:
+                ambiguity["day"].append(number)
+    elif number in range(1, 13):  # When the number is less than 12, it can be either a month or a day
         if not in_range("month"):
             birthday["month"] = number + 0.1
         elif not in_range("day"):
             birthday["day"] = number + 0.1
+
+        if in_range("month"):
+            if number != birthday["month"] and number + 0.1 != birthday["month"]:
+                ambiguity["month"].append(number)
+        elif in_range("day"):
+            if number != birthday["day"] and number + 0.1 != birthday["day"]:
+                ambiguity["day"].append(number)
 
 
 def word_categorize(word):
@@ -230,14 +259,19 @@ def day_processor(word):
     """
     This function maps a word labelled as "day" to a number
     :param word: Word representing a day
-    :return: This day in number form
+    :return: Updates birthday accordingly
     """
     if "-" in word:
         ten, one = word.split("-")
         day = num_map[ten] + day_map[one]
     else:
         day = day_map[word]
-    return day
+
+    if not in_range("day"):
+        birthday["day"] = day
+    else:
+        if day != birthday["day"]:
+            ambiguity["day"].append(day)
 
 
 def weekday_processor(previous_word, word):
@@ -296,8 +330,14 @@ def weekday_processor(previous_word, word):
 
         if not in_range("month"):
             birthday["month"] = bday["month"]
+        else:
+            if bday["month"] != birthday["month"]:
+                ambiguity["month"].append("month")
         if not in_range("day"):
             birthday["day"] = bday["day"]
+        else:
+            if bday["day"] != birthday["day"]:
+                ambiguity["day"].append("day")
 
 
 def year_processor(year):
@@ -313,16 +353,8 @@ def year_processor(year):
     num = []
     special_year = False
     for n in year:
-        if n.isdigit():
-            num.append(int(n))
-        else:
-            if "-" in n:
-                ten, one = n.split("-")
-                num.append(num_map[ten])
-                num.append(num_map[one])
-            else:
-                num.append(num_map[n])
-        if n == "thousand" or n == "hundred":
+        num.append(int(n))
+        if n == 1000 or n == 100:
             special_year = True
     # "thousand" or "hundred" is present in the user's answer ==> n * 1000 or 100 + 10s + 1s
     if special_year:
@@ -336,6 +368,9 @@ def year_processor(year):
             temp_year += num[i]
     if not in_range("year"):
         birthday["year"] = temp_year
+    else:
+        if temp_year != birthday["year"]:
+            ambiguity["year"].append(temp_year)
 
 
 def in_range(category):
@@ -351,7 +386,8 @@ def in_range(category):
         if birthday[category] == 0 or birthday[category] > 12:
             return False
     if category == "year":
-        if birthday[category] == 0:
+        this_year = dt.datetime.today().year
+        if birthday[category] not in range(this_year - 120, this_year + 1):
             return False
     return True
 
@@ -370,6 +406,14 @@ def is_int(num):
         return False
 
 
+def number_converter(number):
+    if "-" in number:
+        ten, one = number.split("-")
+        return num_map[ten] + num_map[one]
+    else:
+        return num_map[number]
+
+
 def answer_processor(answer):
     """
     This function processes user's answer and updates birthday
@@ -380,12 +424,21 @@ def answer_processor(answer):
     answer_list = nltk.word_tokenize(answer)
     year = []
     i = 0
+    skip = False
     for word in answer_list:
+        if skip:
+            skip = False
+            continue
         category = word_categorize(word)
         if category == "month":
-            birthday["month"] = month_map[word]
+            temp_month = month_map[word]
+            if not in_range("month"):
+                birthday["month"] = temp_month
+            else:
+                if temp_month != birthday["month"]:
+                    ambiguity["month"].append(temp_month)
         elif category == "day":
-            birthday["day"] = day_processor(word)
+            day_processor(word)
         elif category == "weekday":
             previous_word = None
             # Check for week indicator based on previous word
@@ -393,14 +446,35 @@ def answer_processor(answer):
                 previous_word = answer_list[i - 1]
             weekday_processor(previous_word, word)
         elif category == "year component":
+            number = number_converter(word)
             previous_word = None
+            next_word = None
+            previous_category = None
+            next_category = None
             if i - 1 >= 0:
                 previous_word = answer_list[i - 1]
-            # If previous word is a month, then this word expression of number should be a day
-            if previous_word in month_map:
-                number_processor(word)
+                previous_category = word_categorize(previous_word)
+            if i + 1 <= len(answer_list) - 1:
+                next_word = answer_list[i + 1]
+                next_category = word_categorize(next_word)
+            if number < 32 and previous_category != "year component" and next_category != "year component":
+                if next_category == "day":
+                    skip = True
+                    word = word + "-" + next_word
+                    day_processor(word)
+                else:
+                    number_processor(str(number))
+            elif number < 32 and previous_category != "year component" and next_category == "year component":
+                next_number = number_converter(next_word)
+                if next_number < 10 and number % 10 == 0:
+                    skip = True
+                    number_processor(str(number + next_number))
+                elif next_word != "thousand" or next_word != "hundred":
+                    number_processor(str(number))
+                else:
+                    year.append(number)
             else:
-                year.append(word)
+                year.append(number)
         elif category == "number":
             next_word = None
             previous_word = None
@@ -421,6 +495,7 @@ def answer_processor(answer):
                 number_processor(word)
         i += 1
     year_processor(year)
+    print(birthday)
 
 
 if __name__ == "__main__":
@@ -429,7 +504,7 @@ if __name__ == "__main__":
     answer_processor(answer)
     while birthday["month"] == 0 or birthday["day"] == 0 or (birthday["month"] == 2 and birthday["day"] > 29):
         # Missing month or day
-        answer = input("I'm sorry I didn't quite get your birthday, would you mind repeating your answer?\n").lower()
+        answer = input("Sorry, I didn't quite get your birthday, would you mind repeating your answer?\n").lower()
         answer_processor(answer)
     while not is_int(birthday["month"]) and not is_int(birthday["day"]):
         # Month and day both less than 12 and expressed as numbers
@@ -470,5 +545,12 @@ if __name__ == "__main__":
         # Missing year
         answer = input("Would you mind telling me which year were you born?\n").lower()
         answer_processor(answer)
+    """
+    while len(ambiguity["day"]) > 0 or len(ambiguity["month"]) > 0 or len(ambiguity["year"]) > 0:
+        if len(ambiguity["day"]) > 0:
+            ambiguity["day"] = []
+            birthday["day"] = 0
+            answer = input("Sorry, would you mind telling me again which day is your birthday?\n")
+    """
     print("Thank you for your information!")
-    print(birthday)
+    # print(birthday)
