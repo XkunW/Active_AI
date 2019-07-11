@@ -161,7 +161,8 @@ question_list = [
 ]
 
 response_to_negative_list = [
-    "That's OK, I respect your privacy"
+    "That's OK, I respect your privacy.",
+    "I understand that you don't want to share this information."
 ]
 
 
@@ -187,13 +188,8 @@ def number_processor(number):
             temp += c
     if temp != "":
         data.append(int(temp))
-    # There is no delimiter
-    if len(data) == 1:
-        num = data[0]
-        number_categorize(num)
-    else:
-        # Delimiter exists, examine each number
-        for num in data:
+
+    for num in data:
             number_categorize(num)
 
 
@@ -444,10 +440,10 @@ def in_range(category):
     :return: Provided category in range or not
     """
     if category == "day":
-        if birthday[category] == 0 or birthday[category] > 31:
+        if birthday[category] == 0 or birthday[category] > 31.1:
             return False
     if category == "month":
-        if birthday[category] == 0 or birthday[category] > 12:
+        if birthday[category] == 0 or birthday[category] > 12.1:
             return False
     if category == "year":
         this_year = dt.datetime.today().year
@@ -591,35 +587,51 @@ def answer_processor(answer):
     return "OK"
 
 
-if __name__ == "__main__":
+def main():
     index = np.random.randint(0, len(question_list))
     answer = input(question_list[index]).lower()
     answer_processor(answer)
+    if birthday["day"] == 0 and birthday["month"] == 0 and birthday["year"] == 0:
+        print(response_to_negative_list[np.random.randint(0, len(response_to_negative_list))])
+        return
+    count = 0
     while not in_range("month") and not in_range("day"):
         # Missing month and day
         birthday["month"] = 0
         birthday["day"] = 0
-        answer = input("Sorry, I didn't quite get your birthday, would you mind repeating your answer?\n").lower()
+        answer = input("Sorry, I didn't quite get your date of birth, would you mind telling me that?\n").lower()
         response = answer_processor(answer)
         if response == "Negative":
-            print("That's OK, I respect your privacy")
+            print(response_to_negative_list[np.random.randint(0, len(response_to_negative_list))])
             break
+        if count > 4:
+            break
+        count += 1
+    count = 0
     while (in_range("month") and not in_range("day")) or (birthday["month"] == 2 and birthday["day"] > 29):
         # Missing day only or Feb out of range
         birthday["day"] = 0
         answer = input("Sorry, I didn't quite get the day of your birth, would you mind telling me that?\n").lower()
         response = answer_processor(answer)
         if response == "Negative":
-            print("That's OK, I respect your privacy")
+            print(response_to_negative_list[np.random.randint(0, len(response_to_negative_list))])
             break
+        if count > 4:
+            break
+        count += 1
+    count = 0
     while not in_range("month") and in_range("day"):
         # Missing month only
         birthday["month"] = 0
         answer = input("Sorry, I didn't quite get the month of your birth, would you mind telling me that?\n").lower()
         response = answer_processor(answer)
         if response == "Negative":
-            print("That's OK, I respect your privacy")
+            print(response_to_negative_list[np.random.randint(0, len(response_to_negative_list))])
             break
+        if count > 4:
+            break
+        count += 1
+    count = 0
     while not is_int(birthday["month"]) and not is_int(birthday["day"]):
         # Month and day both less than 12 and expressed as numbers
         num_1 = int(birthday["month"] - 0.1)
@@ -628,6 +640,8 @@ if __name__ == "__main__":
         if num_1 != num_2:
             month_1 = list(month_map.keys())[list(month_map.values()).index(num_1)].capitalize()
             month_2 = list(month_map.keys())[list(month_map.values()).index(num_2)].capitalize()
+            month_1_abbrev = month_1[0:3]
+            month_2_abbrev = month_2[0:3]
             if num_1 < 4:
                 day_1 = str(num_1) + suffix_map[num_1]
             else:
@@ -641,27 +655,49 @@ if __name__ == "__main__":
                 month_1, day_2, month_2, day_1)).lower()
             answer = nltk.word_tokenize(answer)
             # We can only get clarification if user expressed date in words
-            if month_1.lower() in answer:
+
+            if (month_1.lower() in answer) or \
+                    (month_1_abbrev.lower() in answer) or \
+                    ("first" in answer) or \
+                    ("previous" in answer) or \
+                    ("former" in answer) or \
+                    ("prior" in answer) or \
+                    ("preceding" in answer):
                 birthday["month"] = num_1
                 birthday["day"] = num_2
-            elif month_2.lower() in answer:
+            elif month_2.lower() in answer or \
+                    (month_2_abbrev.lower() in answer) or \
+                    ("second" in answer) or \
+                    ("last" in answer) or \
+                    ("following" in answer) or \
+                    ("latter" in answer) or \
+                    ("later" in answer) or \
+                    ("subsequent" in answer) or \
+                    ("succeeding" in answer):
                 birthday["month"] = num_2
                 birthday["day"] = num_1
         # The numbers are the same, no need to ask again
         else:
             birthday["month"] = num_1
             birthday["day"] = birthday["month"]
+        if count > 4:
+            break
+        count += 1
     if not is_int(birthday["month"]):
         birthday["month"] = int(birthday["month"] - 0.1)
     if not is_int(birthday["day"]):
         birthday["day"] = int(birthday["day"] - 0.1)
+    count = 0
     while not in_range("year"):
         # Missing year
         answer = input("Would you mind telling me which year were you born?\n").lower()
         response = answer_processor(answer)
         if response == "Negative":
-            print("That's OK, I respect your privacy")
+            print(response_to_negative_list[np.random.randint(0, len(response_to_negative_list))])
             break
+        if count > 4:
+            break
+        count += 1
     """
     while len(ambiguity["day"]) > 0 or len(ambiguity["month"]) > 0 or len(ambiguity["year"]) > 0:
         if len(ambiguity["day"]) > 0:
@@ -671,3 +707,6 @@ if __name__ == "__main__":
     """
     print("Thank you for your information!")
     print(birthday)
+
+if __name__ == "__main__":
+    main()
