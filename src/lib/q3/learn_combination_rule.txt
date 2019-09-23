@@ -1,0 +1,756 @@
+negation , P-> its N 
+weaken , N-> like N 
+negation , P-> a N 
+weaken , N->  N from
+strengthen , P->  P to the
+weaken , P->  P the
+weaken , P-> to P 
+weaken , P-> to the P 
+weaken , P->  P its
+negation , N-> to P 
+negation , N->  P of
+strengthen , N-> If N 
+weaken , N->  N a
+weaken , N-> there N 
+weaken , P-> at P 
+weaken , P-> at the P 
+weaken , P->  P this
+weaken , N-> its N 
+weaken , N-> a N 
+weaken , N-> an N 
+weaken , P->  P as
+strengthen , N->  N movie
+weaken , N->  N than
+weaken , P-> with P 
+weaken , P-> and P 
+weaken , P-> of P 
+weaken , P->  P in
+weaken , P->  P in the
+negation , N-> are P 
+negation , N->  P to
+weaken , P-> more P 
+weaken , N-> with N 
+weaken , N->  N to
+strengthen , N->  N something
+weaken , P->  P from
+weaken , P->  P one
+strengthen , P->  P one of
+weaken , P-> as P 
+weaken , P->  P movies
+negation , N-> but P 
+negation , N-> of P 
+negation , P->  N its
+weaken , N-> the N 
+negation , P-> the N 
+weaken , N->  N is
+negation , P-> it N 
+weaken , P->  P to
+weaken , N->  N but
+negation , P->  N a
+weaken , N-> has N 
+weaken , P->  P on
+weaken , P->  P on the
+weaken , P->  P of
+negation , P-> of N 
+weaken , P->  P but
+weaken , N-> Its N 
+weaken , N->  N in
+negation , P->  N it
+weaken , N-> to N a
+negation , P-> this N 
+negation , N-> much P 
+weaken , P->  P at
+weaken , P-> the P 
+weaken , P-> are P 
+weaken , P-> your P 
+weaken , P->  P and
+weaken , N-> and N 
+strengthen , P-> all P 
+weaken , P->  P for
+weaken , N-> what N 
+weaken , N->  N say
+strengthen , N-> trying N 
+weaken , N->  N or
+weaken , P-> a P 
+weaken , P->  P about
+weaken , P->  P that
+weaken , N->  N as
+weaken , N->  N out
+weaken , P->  P out
+negation , N->  P is
+strengthen , P-> can P 
+negation , P-> for N 
+weaken , P->  P film
+weaken , N-> to N 
+weaken , N->  N on
+weaken , P-> on P 
+weaken , P->  P story
+negation , P->  N the
+negation , P-> an N 
+strengthen , N->  N for
+weaken , N->  N for the
+weaken , N->  N the
+negation , N->  P in the
+weaken , N->  N by
+strengthen , P-> is a P 
+weaken , P-> an P 
+negation , N-> an P 
+negation , P-> and N 
+negation , N-> the P 
+weaken , P-> it P 
+weaken , P->  P some
+weaken , P-> some P 
+negation , N-> some P 
+strengthen , P->  P performances
+strengthen , P-> strong P 
+weaken , P-> that P 
+weaken , P->  P a
+weaken , N-> you N 
+weaken , N-> just N 
+strengthen , N->  N to be
+weaken , N->  N be
+weaken , N-> of N 
+weaken , N-> The N 
+negation , N-> their P 
+weaken , P-> the P and
+weaken , N->  N and
+weaken , N-> the N of
+weaken , N->  N of
+negation , P->  N of the
+weaken , P-> its P 
+strengthen , N-> have N 
+weaken , N->  N that
+strengthen , P->  P through
+negation , N->  P it
+negation , N->  P that
+negation , N->  P as
+weaken , P-> is P 
+negation , P-> than N 
+weaken , N->  N in the
+weaken , P->  P you
+weaken , N->  N some
+weaken , N->  N film
+weaken , N-> the film N 
+weaken , N-> film N 
+negation , P->  N much
+negation , P-> with N 
+negation , N->  P a
+negation , N-> a P 
+weaken , N-> that N 
+strengthen , N->  N just
+negation , N-> that P 
+weaken , N-> this N 
+weaken , P->  P cast
+weaken , P-> into P 
+strengthen , N->  N enough
+weaken , N-> it N 
+weaken , N-> it N to
+strengthen , N->  N make
+weaken , N->  N its
+strengthen , P-> still P 
+strengthen , P->  P one of the
+weaken , P->  P of the
+strengthen , P->  P the most
+strengthen , P-> one of P 
+strengthen , P-> one of the P 
+weaken , P-> of the P 
+strengthen , N->  N up
+weaken , P-> The P 
+weaken , P-> but P 
+weaken , P-> there P 
+weaken , P-> or P 
+weaken , P->  P and the
+weaken , N-> is N 
+strengthen , P->  P work
+strengthen , P-> best P 
+weaken , P-> be P 
+weaken , P-> who P 
+weaken , P->  P how
+weaken , N-> in N 
+strengthen , N-> cant N 
+negation , P-> has N 
+negation , N-> be P 
+negation , P-> be N 
+weaken , P-> The film P 
+weaken , P-> film P 
+weaken , P-> what P 
+negation , P-> is N 
+weaken , N->  N you
+weaken , P-> but its P 
+weaken , P->  P very
+weaken , P-> very P 
+weaken , P->  P movie
+negation , P-> Its N 
+weaken , N-> to be N 
+weaken , N-> be N 
+weaken , P->  P is
+weaken , N-> it N a
+strengthen , N-> out N 
+strengthen , N-> about N 
+weaken , P->  P it
+weaken , P->  P by
+strengthen , N->  N so
+weaken , P-> has P 
+weaken , P-> in P 
+weaken , P-> might P 
+weaken , P-> It P 
+weaken , P->  P film that
+weaken , P-> An P 
+weaken , P-> This P 
+weaken , P-> This is P 
+weaken , N-> but N 
+weaken , P->  P characters
+weaken , P-> for P 
+strengthen , P-> A P 
+negation , N->  P but
+negation , P-> but N 
+negation , N->  P of the
+weaken , P-> like P 
+weaken , N->  N this
+negation , N->  P the
+weaken , N->  N it
+weaken , P-> for the P 
+weaken , P-> than P 
+negation , N-> to be P 
+strengthen , P-> is P a
+weaken , N->  N has
+weaken , P-> thats P 
+negation , P-> like N 
+negation , P-> are N 
+weaken , N-> story N 
+strengthen , N-> would N 
+weaken , P-> make P 
+negation , P-> if N 
+strengthen , N->  N any
+negation , P->  N with
+weaken , P-> from P 
+weaken , P->  P or
+weaken , P-> so P 
+strengthen , N-> isnt N 
+weaken , P->  P has
+weaken , P-> his P 
+weaken , P->  P with the
+weaken , P->  P an
+weaken , N-> they N 
+weaken , P-> this P 
+negation , P->  N and
+weaken , P->  P thats
+weaken , P->  P moments
+weaken , N->  N about
+negation , P->  N but
+weaken , P->  P up
+weaken , P->  P for the
+negation , P-> thats N 
+weaken , N->  N how
+weaken , N-> we N 
+strengthen , N->  N better
+weaken , P->  P drama
+negation , P-> never N 
+strengthen , N->  N even
+strengthen , N-> into N 
+negation , P->  N that
+weaken , P-> most P 
+negation , N-> of the P 
+weaken , P-> In P 
+weaken , N-> of the N 
+strengthen , N-> really N 
+weaken , P->  P are
+weaken , N->  N like
+weaken , N-> often N 
+weaken , N->  N like a
+weaken , N->  N who
+weaken , P->  P good
+strengthen , N->  N much
+weaken , N-> not N 
+weaken , P->  P so
+weaken , N->  N more
+negation , P->  N more
+weaken , P-> in the P 
+strengthen , P->  P us
+weaken , N-> from N 
+weaken , P->  P way
+negation , P->  N is
+negation , N-> his P 
+weaken , N-> doesnt N 
+negation , P->  N in
+weaken , N->  N story
+strengthen , N->  N are
+weaken , N-> so N 
+weaken , N-> his N 
+negation , N-> like P 
+negation , P->  N film
+weaken , P-> on the P 
+strengthen , N->  N way
+negation , P->  N movie
+negation , N-> its P 
+negation , P-> very N 
+strengthen , P->  P years
+weaken , N->  N with the
+weaken , N->  N with
+weaken , N->  N the film
+strengthen , N-> like a N 
+negation , P-> from N 
+negation , P->  N on
+weaken , N-> one N 
+strengthen , N-> way N 
+weaken , N->  N time
+weaken , N-> What N 
+negation , N-> at P 
+strengthen , P->  P as a
+negation , P-> I N 
+strengthen , N->  N real
+weaken , P-> their P 
+weaken , P-> director P 
+weaken , P-> I P 
+weaken , N->  N many
+strengthen , P-> may P 
+negation , N-> is P 
+weaken , P-> will P 
+strengthen , N->  N us
+weaken , P-> emotional P 
+negation , N-> than P 
+negation , P->  N to
+negation , P-> This N 
+strengthen , N-> seems N 
+strengthen , N->  N all
+negation , N->  P and
+negation , N-> in P 
+weaken , P-> up P 
+negation , N-> movie P 
+weaken , N-> It N 
+weaken , N->  N one
+negation , N->  P comedy
+negation , P->  N is a
+weaken , P-> not P 
+weaken , N-> as N 
+weaken , N-> to N the
+negation , N-> which P 
+weaken , P-> which P 
+weaken , P-> the P of
+weaken , P-> and P of
+strengthen , N->  N have
+negation , N->  P have
+weaken , N->  N been
+strengthen , N-> been N 
+negation , N-> The P 
+strengthen , P->  P best
+strengthen , P->  P when
+weaken , P-> of P and
+weaken , P-> movies P 
+strengthen , N->  N too
+strengthen , N-> too N 
+negation , P->  N you
+weaken , N-> are N 
+negation , N->  P for
+negation , N->  P by
+negation , N->  P be
+negation , N->  P too
+strengthen , N-> was N 
+negation , N->  P in
+weaken , N-> The N is
+negation , N-> this P 
+negation , P-> as N 
+negation , P->  N an
+strengthen , N->  N than a
+strengthen , N-> little N 
+negation , P->  N for
+negation , N->  P more
+strengthen , N-> There N 
+negation , P-> more N 
+negation , P->  N in the
+negation , N-> not P 
+negation , P->  N about
+negation , N->  P from
+weaken , N-> more N 
+weaken , N-> in the N 
+negation , P->  N as
+weaken , N->  N more than
+negation , P->  N so
+strengthen , N-> make N 
+strengthen , P-> but it P 
+weaken , P->  P most
+weaken , P->  P to see
+weaken , P->  P see
+weaken , P->  P feel
+negation , P-> manages N 
+weaken , N-> at N 
+weaken , N->  N to the
+negation , P->  N to the
+weaken , P->  P life
+weaken , P-> story P 
+weaken , P-> of a P 
+weaken , P->  P love
+weaken , P->  P with
+weaken , N-> for N 
+weaken , P->  P make
+negation , N-> it P 
+strengthen , N->  N have been
+weaken , N->  N do
+strengthen , N-> nothing N 
+weaken , P-> even P 
+weaken , P-> the most P 
+weaken , N->  N get
+weaken , P-> as a P 
+strengthen , P->  P entertaining
+strengthen , P-> is an P 
+negation , P-> no N 
+negation , N->  P its
+weaken , P->  P to be
+weaken , P-> to be P 
+negation , N->  P all
+strengthen , N-> the movie N 
+strengthen , N-> movie N 
+negation , N-> and P 
+strengthen , N->  N if
+weaken , P-> Its P 
+weaken , N-> the N is
+weaken , N-> or N 
+weaken , N->  N to do
+negation , N->  P cast
+weaken , P->  P even
+strengthen , N->  N else
+strengthen , N-> much N 
+negation , P->  N have
+weaken , P-> every P 
+weaken , N->  N of the
+weaken , P-> for a P 
+strengthen , P-> new P 
+strengthen , P-> we P 
+strengthen , N-> all N 
+weaken , N->  N of a
+weaken , P-> is P the
+strengthen , P-> one P 
+weaken , P-> just P 
+strengthen , P->  P time
+negation , P-> that N 
+negation , P-> to N 
+strengthen , P-> If P 
+weaken , P-> you P 
+weaken , N->  N see
+weaken , P-> in a P 
+weaken , P-> to P the
+weaken , N->  N he
+negation , N-> and the P 
+strengthen , P->  P funny
+weaken , P-> the film P 
+negation , P-> not N 
+negation , P->  N of
+strengthen , N-> theres N 
+negation , P->  N than
+strengthen , P-> any P 
+strengthen , N->  N quite
+negation , P->  N this
+negation , N-> of a P 
+negation , N-> the P of
+strengthen , N-> but the N 
+negation , N-> never P 
+weaken , P->  P into
+weaken , N-> will N 
+weaken , P-> he P 
+weaken , N-> the N to
+negation , N->  P with
+weaken , P-> first P 
+weaken , P-> the P of the
+weaken , P-> the P the
+weaken , P->  P here
+weaken , P-> the P is
+negation , P-> can N 
+weaken , N-> if N 
+negation , P->  N has
+negation , N->  P are
+negation , N->  P of a
+weaken , N-> of a N 
+negation , P->  N be
+strengthen , N-> almost N 
+negation , N-> film P 
+weaken , N-> than N 
+weaken , P->  P comedy
+weaken , P-> movie P 
+negation , N-> as P 
+negation , N-> more P 
+weaken , N-> that it N 
+strengthen , P->  P fun
+weaken , P-> great P 
+negation , N->  P movie
+negation , P->  N to be
+weaken , P->  P be
+strengthen , N->  N which
+negation , P-> in N 
+weaken , N-> feels N 
+weaken , N->  N I
+strengthen , N->  N not
+weaken , P->  P films
+weaken , P-> worth P 
+weaken , P->  P enough
+weaken , N->  N and the
+weaken , N-> the N the
+weaken , P-> about P 
+strengthen , N-> enough N 
+weaken , P->  P more
+negation , P-> what N 
+negation , P->  N all
+negation , N-> too P 
+negation , N-> Its P 
+weaken , P-> good P 
+negation , N-> as P as
+weaken , P->  P who
+negation , P->  N one
+negation , P-> one N 
+strengthen , N-> which N 
+weaken , N->  N made
+negation , P-> so N 
+weaken , N->  N at
+weaken , N->  N is a
+weaken , N->  N an
+weaken , P-> performance P 
+weaken , N-> to the N 
+weaken , P-> well P 
+weaken , N-> who N 
+negation , P-> who N 
+negation , P-> The N 
+weaken , P-> about the P 
+negation , P-> get N 
+weaken , N-> first N 
+weaken , P->  P the film
+weaken , P-> the P a
+weaken , P-> theres P 
+negation , P-> film N 
+strengthen , N-> still N 
+weaken , P->  P their
+weaken , P-> a P of
+strengthen , P->  P ride
+weaken , P-> human P 
+negation , P->  N like
+negation , P->  N too
+contrast , P->  N to P 
+negation , N-> for P 
+negation , N-> for a P 
+weaken , P->  P between
+weaken , N->  N think
+weaken , P-> visual P 
+negation , P-> the N and
+negation , N-> to P the
+weaken , N-> no N 
+strengthen , P->  P little
+weaken , P->  P your
+negation , P-> It N 
+negation , P-> may N 
+weaken , P->  P action
+negation , N->  P not
+negation , N->  P film
+negation , N->  P with the
+weaken , P->  P with a
+negation , P-> we N 
+negation , N-> with P 
+negation , P-> the N of
+weaken , P->  P his
+negation , N-> A P 
+weaken , P-> her P 
+weaken , P-> it P to
+negation , N->  P and the
+negation , N-> the P the
+weaken , N-> and the N 
+strengthen , P-> young P 
+weaken , N-> on N 
+weaken , P-> a P in
+negation , N->  P one
+negation , N->  P this
+negation , N->  P but the
+weaken , P->  P as it
+negation , N->  P at
+negation , P->  N at
+negation , N-> been P 
+weaken , N-> I N 
+weaken , N-> but it N 
+weaken , N-> as it N 
+weaken , P-> two P 
+negation , N->  P The
+strengthen , N-> only N 
+negation , N->  P or
+weaken , P-> is P of
+strengthen , P-> is the P 
+weaken , P->  P not
+weaken , N-> a N of
+weaken , P-> But P 
+negation , N->  P moments
+weaken , P->  P them
+weaken , N-> get N 
+weaken , N->  N being
+weaken , P-> that P the
+negation , P-> you N 
+negation , N-> or P 
+weaken , P-> is P to
+strengthen , P-> a P to
+strengthen , N-> hard N 
+weaken , N->  N his
+strengthen , N->  N minutes
+negation , P->  N by
+strengthen , P->  P is a
+weaken , N-> with a N 
+weaken , N-> In N 
+weaken , P->  P have
+strengthen , N->  N off
+negation , P-> of the N 
+negation , P-> just N 
+weaken , N-> never N 
+strengthen , N-> thats N 
+weaken , P->  P of a
+negation , P-> way N 
+negation , P->  N great
+strengthen , N-> by N 
+weaken , P-> The P is
+weaken , P-> a P and
+weaken , P->  P all
+weaken , N->  N long
+negation , P-> his N 
+strengthen , P-> also P 
+weaken , N->  N was
+strengthen , N->  N thing
+negation , P->  N little
+negation , N->  P so
+strengthen , P->  P thing
+weaken , P-> with the P 
+weaken , P->  P like
+weaken , N->  N does
+weaken , N-> is N a
+weaken , N-> A N 
+negation , P->  N do
+weaken , P->  P for a
+negation , N-> as a P 
+weaken , P-> really P 
+contrast , N->  N the P 
+negation , N-> to the P 
+negation , P->  N just
+weaken , P-> Theres P 
+weaken , N-> is a N 
+weaken , P->  P much
+strengthen , N->  N feels
+weaken , N-> he N 
+weaken , P-> something P 
+weaken , P-> have P 
+weaken , P-> and a P 
+weaken , P-> if P 
+weaken , P->  P what
+negation , N->  P like
+strengthen , N->  N what
+weaken , N-> can N 
+weaken , P->  P The
+negation , N-> you P 
+strengthen , N->  N into
+negation , P-> A N 
+weaken , P->  P lot
+weaken , P->  P performance
+weaken , P-> in the P of
+negation , N->  P than
+weaken , N-> even N 
+contrast , P->  P of N 
+negation , P-> enough N 
+negation , P-> movie N 
+weaken , P->  P of its
+negation , N->  P up
+negation , N-> have P 
+weaken , P-> many P 
+negation , P-> on N 
+contrast , P->  N a P 
+weaken , P->  P I
+weaken , N-> The N of
+weaken , P-> of P the
+negation , P-> isnt N 
+weaken , P-> much P 
+weaken , P->  P as the
+weaken , N->  N before
+strengthen , N-> Theres N 
+weaken , P->  P tale
+weaken , N-> were N 
+negation , P->  N thats
+negation , P-> story N 
+weaken , N-> she N 
+weaken , N->  N as a
+weaken , N-> come N 
+weaken , P->  P own
+weaken , N->  N here
+weaken , N-> also N 
+weaken , N->  N good
+negation , N->  P I
+weaken , P-> as P as
+weaken , N->  N the movie
+weaken , P-> has a P 
+negation , N-> so P 
+negation , N->  P story
+weaken , N-> is the N 
+weaken , N-> Its not N 
+weaken , N-> might N 
+negation , P-> have N 
+weaken , P-> Its a P 
+negation , N-> about P 
+negation , N-> on P 
+negation , N->  P an
+negation , N-> into P 
+strengthen , N-> ultimately N 
+weaken , P-> is P and
+weaken , P-> by P 
+weaken , P->  P can
+negation , N->  P But
+negation , P->  N not
+negation , P-> all N 
+negation , P->  N a little
+weaken , P->  P if
+weaken , P->  P which
+strengthen , P-> with a P 
+weaken , N-> is not N 
+contrast , P->  P the N 
+negation , P-> good N 
+weaken , P-> be a P 
+weaken , P->  P than
+weaken , P->  P her
+strengthen , N-> This N 
+weaken , P-> and the P 
+weaken , P->  P but it
+weaken , N-> could N 
+weaken , N-> The film N 
+weaken , P->  P been
+weaken , P-> films P 
+strengthen , P-> it is P 
+negation , P->  N from
+weaken , P-> funny P 
+weaken , P-> action P 
+negation , P->  N as a
+weaken , N->  N take
+negation , P->  N or
+contrast , P->  N the P 
+negation , N->  P has
+contrast , N->  N of P 
+negation , N->  P enough
+negation , N->  P on
+weaken , P-> its a P 
+weaken , P-> a P movie
+strengthen , P->  P and a
+negation , P-> The N is
+strengthen , P-> into the P 
+weaken , N-> when N 
+negation , P-> when N 
+weaken , N->  N The
+weaken , P->  P of his
+strengthen , N->  N had
+negation , P->  N into
+weaken , N-> feel N 
+negation , N-> on the P 
+negation , N->  P you
+weaken , P-> horror P 
+negation , P-> of a N 
+negation , P-> the film N 
+weaken , P-> own P 
+negation , N-> all P 
+negation , N-> in the P 
+weaken , P-> get P 
+weaken , P-> a P the
+negation , N-> only P 
+negation , N-> he P 
+weaken , N-> very N 
+negation , N-> has P 
+negation , P-> he N 
+weaken , N-> could have N 
+negation , P->  N out
+weaken , P-> film is P 
+weaken , P-> in P of
+negation , N-> is a P 
